@@ -1,7 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net40;netstandard1.0</TargetFrameworks>
+    <Authors>Thiago Barradas</Authors>
+    <Company>Mundipagg</Company>
+    <Description>Extensions for .NET "Type";</Description>
+    <Copyright>Ⓒ 2019</Copyright>
+    <PackageLicenseUrl>https://github.com/ThiagoBarradas/type-extensions/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/ThiagoBarradas/type-extensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ThiagoBarradas/type-extensions</RepositoryUrl>
+    <PackageReleaseNotes>- First version;</PackageReleaseNotes>
+    <PackageTags>type, extension, demo, talk, sample</PackageTags>
+    <PackageIconUrl>https://i.imgur.com/P7aDP0E.png</PackageIconUrl>
   </PropertyGroup>
 
 </Project>

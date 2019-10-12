@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TypeUtility</id>
+    <version>[[versio1.2.3]</version>
+    <title>TypeUtility</title>
+    <authors>Thiago Barradas</authors>
+    <owners>Thiago Barradas</owners>
+    <projectUrl>https://github.com/ThiagoBarradas/type-extensions</projectUrl>
+	<licenseUrl>https://github.com/ThiagoBarradas/type-extensions/blob/master/LICENSE</licenseUrl>
+    <iconUrl>https://i.imgur.com/P7aDP0E.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extensions for .NET "Type";</description>
+    <releaseNotes>
+      Update [[versio1.2.3]
+    </releaseNotes>
+    <copyright>2019</copyright>
+    <tags>type, extension, demo, talk, sample</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\net40\TypeUtility.dll" target="lib\net40" />
+    <file src="bin\Release\netstandard1.0\TypeUtility.dll" target="lib\netstandard1.0" />
+  </files>
+</package>

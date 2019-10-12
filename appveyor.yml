@@ -1,0 +1,44 @@
+image: Visual Studio 2017
+platform: Any CPU
+
+environment:
+  version: $(APPVEYOR_BUILD_VERSION)
+
+configuration:
+- Release
+
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '%version%'
+  package_version: '%version%'
+  assembly_version: '%version%'
+  file_version: '%version%'
+  informational_version: '%version%'
+
+before_build:
+  - choco install opencover.portable
+  - choco install codecov
+  - dotnet restore
+
+build:
+  project: TypeUtility.sln
+
+test_script:
+  - OpenCover.Console.exe -oldstyle -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test --logger:trx;LogFileName=results.trx /p:DebugType=full TypeUtility.Tests.NETCore22\TypeUtility.Tests.NETCore22.csproj" -filter:"+[TypeUtility*]* -[TypeUtility.Tests*]*" -output:".\coverage.xml"
+  - codecov -f .\coverage.xml -t %CODECOV_TOKEN%
+
+after_test:
+  - (Get-Content TypeUtility.nuspec) | ForEach-Object { $_ -replace "__version__", "%version%" } | Set-Content TypeUtility.compiled.nuspec
+  - dotnet pack TypeUtility.compiled.nuspec --configuration Release
+
+artifacts:
+  - path: TypeUtility\bin\Release\netstandard1.0\TypeUtility.dll
+  - path: TypeUtility\bin\Release\net40\TypeUtility.dll
+  - path: TypeUtility\bin\Release\Nancy.Scaffolding.%version%.nupkg
+    name: TypeUtility.%version%.nupkg
+
+deploy:
+  provider: NuGet
+  api_key:
+    secure: csyDlyeSjDmdYAQ/PK0GYNZ4ofK/yC6vd5ZLPnG2TgujmrAW7fUiQxjDVOWD4XAX
