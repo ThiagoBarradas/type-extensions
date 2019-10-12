@@ -26,7 +26,8 @@ build:
   project: TypeUtility.sln
 
 test_script:
-  - OpenCover.Console.exe -oldstyle -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test --logger:trx;LogFileName=results.trx /p:DebugType=full TypeUtility.sln" -filter:"+[TypeUtility*]* -[TypeUtility.Tests*]*" -output:".\coverage.xml"
+  - OpenCover.Console.exe -oldstyle -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test --logger:trx;LogFileName=results.trx /p:DebugType=full TypeUtility.Tests.NETCore22\TypeUtility.Tests.NETCore22.csproj" -filter:"+[TypeUtility*]* -[TypeUtility.Tests*]*" -output:".\coverage.xml"
+  - OpenCover.Console.exe -oldstyle -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test --logger:trx;LogFileName=results.trx /p:DebugType=full TypeUtility.Tests.NET40\TypeUtility.Tests.NET40.csproj" -filter:"+[TypeUtility*]* -[TypeUtility.Tests*]*" -mergeoutput -output:".\coverage.xml"
   - codecov -f .\coverage.xml -t %CODECOV_TOKEN%
 
 after_test:
