@@ -31,7 +31,7 @@ test_script:
 
 after_test:
   - ps: (Get-Content TypeUtility.nuspec) | ForEach-Object { $_ -replace "__version__", "%version%" } | Set-Content TypeUtility.compiled.nuspec
-  - dotnet pack TypeUtility.compiled.nuspec --configuration Release
+  - nuget pack TypeUtility.compiled.nuspec -Prop Configuration=Release
 
 artifacts:
   - path: TypeUtility\bin\Release\netstandard1.0\TypeUtility.dll
