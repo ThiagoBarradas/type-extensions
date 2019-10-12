@@ -26,7 +26,7 @@ build:
   project: TypeUtility.sln
 
 test_script:
-  - OpenCover.Console.exe -oldstyle -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test --logger:trx;LogFileName=results.trx /p:DebugType=full TypeUtility.Tests.NETCore22\TypeUtility.Tests.NETCore22.csproj" -filter:"+[TypeUtility*]* -[TypeUtility.Tests*]*" -output:".\coverage.xml"
+  - OpenCover.Console.exe -oldstyle -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test --logger:trx;LogFileName=results.trx /p:DebugType=full TypeUtility.Tests.*\TypeUtility.Tests.*.csproj" -filter:"+[TypeUtility*]* -[TypeUtility.Tests*]*" -output:".\coverage.xml"
   - codecov -f .\coverage.xml -t %CODECOV_TOKEN%
 
 after_test:
@@ -36,8 +36,7 @@ after_test:
 artifacts:
   - path: TypeUtility\bin\Release\netstandard1.0\TypeUtility.dll
   - path: TypeUtility\bin\Release\net40\TypeUtility.dll
-  - path: TypeUtility\bin\Release\Nancy.Scaffolding.%version%.nupkg
-    name: TypeUtility.%version%.nupkg
+  - path: TypeUtility.%version%.nupkg
 
 deploy:
   provider: NuGet
