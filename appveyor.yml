@@ -30,7 +30,7 @@ test_script:
   - codecov -f .\coverage.xml -t %CODECOV_TOKEN%
 
 after_test:
-  - ps: (Get-Content TypeUtility.nuspec) | ForEach-Object { $_ -replace "__version__", %version% } | Set-Content TypeUtility.compiled.nuspec
+  - ps: (Get-Content TypeUtility.nuspec) | ForEach-Object { $_ -replace "__version__", '$(version)' } | Set-Content TypeUtility.compiled.nuspec
   - nuget pack TypeUtility.compiled.nuspec -Prop Configuration=Release
 
 artifacts:
