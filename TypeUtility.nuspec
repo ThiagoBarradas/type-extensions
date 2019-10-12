@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Extensions for .NET "Type";</description>
     <releaseNotes>
-      Update __version__
+      See changelog in https://github.com/thiagobarradas/type-extensions/releases/tag/__version__
     </releaseNotes>
     <copyright>2019</copyright>
     <tags>type, extension, demo, talk, sample</tags>
