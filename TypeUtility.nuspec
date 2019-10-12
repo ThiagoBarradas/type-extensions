@@ -8,7 +8,7 @@
     <owners>Thiago Barradas</owners>
     <projectUrl>https://github.com/ThiagoBarradas/type-extensions</projectUrl>
 	  <licenseUrl>https://github.com/ThiagoBarradas/type-extensions/blob/master/LICENSE</licenseUrl>
-    <icon>https://i.imgur.com/P7aDP0E.png</icon>
+    <iconUrl>https://i.imgur.com/P7aDP0E.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Extensions for .NET "Type";</description>
     <releaseNotes>
