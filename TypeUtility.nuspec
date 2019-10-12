@@ -18,7 +18,7 @@
     <tags>type, extension, demo, talk, sample</tags>
   </metadata>
   <files>
-    <file src="bin\Release\net40\TypeUtility.dll" target="lib\net40" />
-    <file src="bin\Release\netstandard1.0\TypeUtility.dll" target="lib\netstandard1.0" />
+    <file src="TypeUtility\bin\Release\net40\TypeUtility.dll" target="lib\net40" />
+    <file src="TypeUtility\bin\Release\netstandard1.0\TypeUtility.dll" target="lib\netstandard1.0" />
   </files>
 </package>
