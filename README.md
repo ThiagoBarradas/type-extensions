@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/12xcihj4ak5vuhou/branch/master?svg=true)](https://ci.appveyor.com/project/ThiagoBarradas/type-extensions/branch/master)
+
 # TypeUtility
 
 Demo project to create an opensource nuget package with multi targeting.
