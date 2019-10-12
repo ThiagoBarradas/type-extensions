@@ -20,6 +20,7 @@ before_build:
   - choco install opencover.portable
   - choco install codecov
   - dotnet restore
+  - nuget restore
 
 build:
   project: TypeUtility.sln
